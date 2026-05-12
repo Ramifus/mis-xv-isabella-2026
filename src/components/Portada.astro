@@ -5,18 +5,35 @@
 <section
     class="fixed inset-0 w-full h-screen flex justify-center z-[10000]"
     id="portada-section"
-    style="background-color: #fff8f9; background-image: url('/imagenes/BlancoTextura.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
+    style="background-color: #fff8f9; background-image: url('/imagenes/fondo2.png'); background-size: cover; background-position: center; background-repeat: no-repeat;"
 >
-    <div class="relative w-full max-w-[480px] h-full flex flex-col overflow-hidden">
-
+    <div
+        class="relative w-full max-w-[480px] h-full flex flex-col overflow-hidden"
+    >
         <!-- FLORES ARRIBA -->
-        <div id="flores-arriba" class="absolute top-0 left-0 right-0 z-[8] pointer-events-none">
-            <img src="/imagenes/floresarriba.png" alt="" class="w-full object-contain object-top" style="max-height: 230px;" />
+        <div
+            id="flores-arriba"
+            class="absolute top-0 left-0 right-0 z-[8] pointer-events-none"
+        >
+            <img
+                src="/imagenes/floresarriba.png"
+                alt=""
+                class="w-full object-contain object-top"
+                style="max-height: 230px;"
+            />
         </div>
 
         <!-- FLORES ABAJO -->
-        <div id="flores-abajo" class="absolute bottom-0 left-0 right-0 z-[8] pointer-events-none">
-            <img src="/imagenes/floresabajo.png" alt="" class="w-full object-contain object-bottom" style="max-height: 230px;" />
+        <div
+            id="flores-abajo"
+            class="absolute bottom-0 left-0 right-0 z-[8] pointer-events-none"
+        >
+            <img
+                src="/imagenes/floresabajo.png"
+                alt=""
+                class="w-full object-contain object-bottom"
+                style="max-height: 230px;"
+            />
         </div>
 
         <!-- CONTENIDO -->
@@ -35,21 +52,43 @@
             </div>
 
             <!-- Mis 15 Años -->
-            <div id="titulo" class="text-center" style="line-height: 1.1; margin-bottom: 4px;">
-                <span class="font-cormorant" style="font-size: 2.4rem; font-weight: 300; font-style: italic; color: #c4788a; letter-spacing: 0.06em;">Mis 15 Años</span>
+            <div
+                id="titulo"
+                class="relative w-full text-center"
+                style="line-height: 1.1; margin-bottom: 36px;"
+            >
+                <img
+                    src="/imagenes/mono2.png"
+                    alt=""
+                    style="position: absolute; left: -1rem; top: 50%; transform: translateY(-50%); width: 64px; object-fit: contain;"
+                />
+                <span
+                    class="font-crimson"
+                    style="font-size: 1.8rem; font-weight: 400; font-style: italic; color: #d0727d; letter-spacing: 0.06em; text-transform: uppercase;"
+                    >Mis 15 Años</span
+                >
+                <img
+                    src="/imagenes/mono2.png"
+                    alt=""
+                    style="position: absolute; right: -1rem; top: 50%; transform: translateY(-50%) scaleX(-1); width: 64px; object-fit: contain;"
+                />
             </div>
 
             <!-- Nombre -->
             <div
                 id="nombre"
                 class="font-great-vibes text-center"
-                style="font-size: 4.8rem; color: #9b3a55; line-height: 1.0; margin-bottom: 28px;"
+                style="font-size: 4.8rem; color: #d0727d; line-height: 1.0; margin-bottom: 28px;"
             >
                 Isabella
             </div>
 
             <!-- Sobre -->
-            <div id="sobre-container" class="flex justify-center cursor-pointer" style="margin-bottom: 20px;">
+            <div
+                id="sobre-container"
+                class="flex justify-center cursor-pointer"
+                style="margin-bottom: 20px;"
+            >
                 <img
                     src="/imagenes/sobre.png"
                     alt="Sobre de invitación"
@@ -60,8 +99,8 @@
             <!-- Instrucción -->
             <p
                 id="instruccion"
-                class="font-charm text-center"
-                style="font-size: 1.05rem; color: #b5607a; line-height: 1.55; letter-spacing: 0.02em;"
+                class="font-charm text-center text-xl"
+                style="color: #b5607a; line-height: 1.55; letter-spacing: 0.02em;"
             >
                 Toque el sobre para abrir<br />la invitación
             </p>
@@ -74,65 +113,154 @@
 
     if (typeof window !== "undefined") {
         document.addEventListener("DOMContentLoaded", () => {
-
             document.body.classList.add("portada-activa");
 
             // ── Estado inicial ──────────────────────────────────────
-            gsap.set("#flores-arriba",    { opacity: 0, y: -50 });
-            gsap.set("#flores-abajo",     { opacity: 0, y:  50 });
-            gsap.set("#corona",           { opacity: 0, y: -20, scale: 0.8 });
-            gsap.set("#titulo",           { opacity: 0, y: -14 });
-            gsap.set("#nombre",           { opacity: 0, y: 10, scale: 0.93 });
-            gsap.set("#sobre-container",  { opacity: 0, y: 26, scale: 0.93 });
-            gsap.set("#instruccion",      { opacity: 0 });
+            gsap.set("#flores-arriba", { opacity: 0, y: -50 });
+            gsap.set("#flores-abajo", { opacity: 0, y: 50 });
+            gsap.set("#corona", { opacity: 0, y: -20, scale: 0.8 });
+            gsap.set("#titulo", { opacity: 0, y: -14 });
+            gsap.set("#nombre", { opacity: 0, y: 10, scale: 0.93 });
+            gsap.set("#sobre-container", { opacity: 0, y: 26, scale: 0.93 });
+            gsap.set("#instruccion", { opacity: 0 });
 
             // ── Entrada ─────────────────────────────────────────────
             const tl = gsap.timeline({ delay: 0.25 });
 
-            tl
-                .to(["#flores-arriba", "#flores-abajo"], {
-                    opacity: 1, y: 0, duration: 1.3, ease: "power2.out",
-                }, 0)
-                .to("#corona", {
-                    opacity: 1, y: 0, scale: 1, duration: 1.0, ease: "back.out(1.7)",
-                }, 0.55)
-                .to("#titulo", {
-                    opacity: 1, y: 0, duration: 0.9, ease: "power2.out",
-                }, 0.85)
-                .to("#nombre", {
-                    opacity: 1, y: 0, scale: 1, duration: 1.0, ease: "power2.out",
-                }, 1.05)
-                .to("#sobre-container", {
-                    opacity: 1, y: 0, scale: 1, duration: 1.0, ease: "back.out(1.4)",
-                }, 1.3)
-                .to("#instruccion", {
-                    opacity: 1, duration: 0.85, ease: "power2.out",
-                }, 1.65);
+            tl.to(
+                ["#flores-arriba", "#flores-abajo"],
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.3,
+                    ease: "power2.out",
+                },
+                0,
+            )
+                .to(
+                    "#corona",
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 1.0,
+                        ease: "back.out(1.7)",
+                    },
+                    0.55,
+                )
+                .to(
+                    "#titulo",
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.9,
+                        ease: "power2.out",
+                    },
+                    0.85,
+                )
+                .to(
+                    "#nombre",
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 1.0,
+                        ease: "power2.out",
+                    },
+                    1.05,
+                )
+                .to(
+                    "#sobre-container",
+                    {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                        duration: 1.0,
+                        ease: "back.out(1.4)",
+                    },
+                    1.3,
+                )
+                .to(
+                    "#instruccion",
+                    {
+                        opacity: 1,
+                        duration: 0.85,
+                        ease: "power2.out",
+                    },
+                    1.65,
+                );
 
             // ── Reposo ──────────────────────────────────────────────
             tl.add(() => {
-                gsap.to("#flores-arriba", { y: -5, duration: 5,   repeat: -1, yoyo: true, ease: "sine.inOut" });
-                gsap.to("#flores-abajo",  { y:  5, duration: 5.5, repeat: -1, yoyo: true, ease: "sine.inOut" });
-                gsap.to("#corona",        { y: -5, rotation: -2, duration: 3.5, repeat: -1, yoyo: true, ease: "sine.inOut" });
-                gsap.to("#nombre",        { y: -3, duration: 4,   repeat: -1, yoyo: true, ease: "sine.inOut" });
-                gsap.to("#sobre-container", { scale: 1.025, duration: 2.2, repeat: -1, yoyo: true, ease: "sine.inOut" });
+                gsap.to("#flores-arriba", {
+                    y: -5,
+                    duration: 5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                });
+                gsap.to("#flores-abajo", {
+                    y: 5,
+                    duration: 5.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                });
+                gsap.to("#corona", {
+                    y: -5,
+                    rotation: -2,
+                    duration: 3.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                });
+                gsap.to("#nombre", {
+                    y: -3,
+                    duration: 4,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                });
+                gsap.to("#sobre-container", {
+                    scale: 1.025,
+                    duration: 2.2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                });
             }, 2.2);
 
             // ── Hover sobre ─────────────────────────────────────────
             const sobreContainer = document.getElementById("sobre-container");
 
             sobreContainer?.addEventListener("mouseenter", () => {
-                gsap.to("#sobre-container", { y: -8, scale: 1.05, duration: 0.3, ease: "power2.out" });
+                gsap.to("#sobre-container", {
+                    y: -8,
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
             });
             sobreContainer?.addEventListener("mouseleave", () => {
-                gsap.to("#sobre-container", { y: 0, scale: 1, duration: 0.3, ease: "power2.out" });
+                gsap.to("#sobre-container", {
+                    y: 0,
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.out",
+                });
             });
 
             // ── Click sobre ─────────────────────────────────────────
             const portadaSection = document.getElementById("portada-section");
 
             sobreContainer?.addEventListener("click", () => {
-                gsap.killTweensOf(["#flores-arriba","#flores-abajo","#corona","#nombre","#sobre-container"]);
+                gsap.killTweensOf([
+                    "#flores-arriba",
+                    "#flores-abajo",
+                    "#corona",
+                    "#nombre",
+                    "#sobre-container",
+                ]);
 
                 const audio = new Audio("/musica/melodia.mp3");
                 audio.loop = true;
@@ -141,28 +269,65 @@
 
                 (window as any).audioGlobal = audio;
                 (window as any).estaReproduciendoGlobal = true;
+                window.dispatchEvent(new CustomEvent("musica-iniciada"));
 
                 const tlSalida = gsap.timeline();
 
                 tlSalida
-                    .to("#sobre-container", { scale: 1.1, duration: 0.2, ease: "power2.in" })
-                    .to(["#instruccion","#nombre","#titulo","#corona"], {
-                        opacity: 0, y: -16, duration: 0.4, stagger: 0.05, ease: "power2.in",
-                    }, 0.1)
-                    .to(["#flores-arriba","#flores-abajo"], {
-                        opacity: 0, scale: 0.93, duration: 0.4, ease: "power2.in",
-                    }, 0.1)
                     .to("#sobre-container", {
-                        opacity: 0, scale: 1.35, duration: 0.4, ease: "power2.in",
-                    }, 0.3)
-                    .to(portadaSection, {
-                        opacity: 0, duration: 0.5, ease: "power2.in",
-                        onStart: () => { document.body.classList.remove("portada-activa"); },
-                        onComplete: () => {
-                            portadaSection?.remove();
-                            window.scrollTo({ top: 0, behavior: "smooth" });
+                        scale: 1.1,
+                        duration: 0.2,
+                        ease: "power2.in",
+                    })
+                    .to(
+                        ["#instruccion", "#nombre", "#titulo", "#corona"],
+                        {
+                            opacity: 0,
+                            y: -16,
+                            duration: 0.4,
+                            stagger: 0.05,
+                            ease: "power2.in",
                         },
-                    }, 0.5);
+                        0.1,
+                    )
+                    .to(
+                        ["#flores-arriba", "#flores-abajo"],
+                        {
+                            opacity: 0,
+                            scale: 0.93,
+                            duration: 0.4,
+                            ease: "power2.in",
+                        },
+                        0.1,
+                    )
+                    .to(
+                        "#sobre-container",
+                        {
+                            opacity: 0,
+                            scale: 1.35,
+                            duration: 0.4,
+                            ease: "power2.in",
+                        },
+                        0.3,
+                    )
+                    .to(
+                        portadaSection,
+                        {
+                            opacity: 0,
+                            duration: 0.5,
+                            ease: "power2.in",
+                            onStart: () => {
+                                document.body.classList.remove(
+                                    "portada-activa",
+                                );
+                            },
+                            onComplete: () => {
+                                portadaSection?.remove();
+                                window.scrollTo({ top: 0, behavior: "smooth" });
+                            },
+                        },
+                        0.5,
+                    );
             });
         });
     }

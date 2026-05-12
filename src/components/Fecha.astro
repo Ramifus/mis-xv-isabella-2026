@@ -1,146 +1,78 @@
 <!-- ═══════════════════════════════════════════════════════════ --><!-- 📅 COMPONENTE FECHA - FECHA DEL EVENTO DE BODA             --><!-- ═══════════════════════════════════════════════════════════ -->
-<section class="relative w-full py-2 md:py-10 px-4">
-  <!-- ═════════════════════════════════════════════════════════════ -->
-  <!-- 🌸 HOJAS DECORATIVAS - Pegadas a los bordes de la pantalla    -->
-  <!-- ═════════════════════════════════════════════════════════════ -->
+<section class="relative w-full py-2 md:py-10">
 
-  <!-- ═══ PRIMERA CAPA (ABAJO): Hojas Doradas ═══ -->
+  <!-- FILA: flor izquierda | texto | flor derecha — flores pegadas al borde -->
+  <div class="flex items-center w-full mb-5" id="texto-invitacion-container">
 
-  <!-- Hoja dorada izquierda -->
-  <img
-    src="/imagenes/hojadorada.png"
-    alt="hoja dorada"
-    class="absolute left-0 top-1/2 -translate-y-1/2 w-18 lg:w-28 h-18 md:w-20 md:h-20 opacity-0 pointer-events-none z-10"
-    id="hoja-dorada-fecha-izq"
-  />
+    <!-- Flor izquierda pegada al borde -->
+    <img id="flor-fecha-izq" src="/imagenes/florlateral.png" alt=""
+      class="flex-shrink-0 pointer-events-none"
+      style="width: 38px; object-fit: contain; opacity: 0;" />
 
-  <!-- Hoja dorada derecha (volteada horizontalmente) -->
-  <img
-    src="/imagenes/hojadorada.png"
-    alt="hoja dorada"
-    class="absolute right-0 top-1/2 -translate-y-1/2 w-18 lg:w-28 h-18 md:w-20 md:h-20 opacity-0 pointer-events-none z-10 scale-x-[-1]"
-    id="hoja-dorada-fecha-der"
-  />
-
-  <!-- ═══ SEGUNDA CAPA (ENCIMA): Flores Laterales ═══ -->
-
-  <!-- Hoja lateral izquierda -->
-  <img
-    src="/imagenes/florlateral.png"
-    alt="Hoja izquierda"
-    class="absolute left-0 top-1/2 -translate-y-1/2 w-18 lg:w-28 h-18 lg:h-28 md:w-20 md:h-20 opacity-0 pointer-events-none z-[11]"
-    id="hoja-fecha-izq"
-  />
-
-  <!-- Hoja lateral derecha (volteada horizontalmente) -->
-  <img
-    src="/imagenes/florlateral.png"
-    alt="Hoja derecha"
-    class="absolute right-0 top-1/2 -translate-y-1/2 w-18 lg:w-28 h-18 lg:h-28 md:w-20 md:h-20 opacity-0 pointer-events-none z-[11] scale-x-[-1]"
-    id="hoja-fecha-der"
-  />
-
-  <!-- CONTENEDOR PRINCIPAL -->
-  <div class="max-w-2xl mx-auto text-center relative">
-    <!-- 🕊️ PALOMAS CON ANILLOS - VUELAN DESDE LOS COSTADOS AL CENTRO -->
-    <div
-      class="flex justify-center items-center mb-4 md:mb-20 relative h-16"
-      id="palomas-container"
-    >
-      <!-- Paloma izquierda -->
-      <div
-        class="absolute left-1/2"
-        id="paloma-izq"
-        style="transform: translateX(-100%);"
-      >
-        <img
-          src="/imagenes/paloma.png"
-          alt="Paloma izquierda"
-          class="w-16 md:w-32 lg:w-36 h-auto"
-        />
+    <!-- Contenido central -->
+    <div class="flex-1 text-center px-3">
+      <div class="flex items-center justify-center gap-2 mb-3">
+        <div style="width: 35px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
+        <div style="width: 4px; height: 4px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
+        <div style="width: 35px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
       </div>
 
-      <!-- Paloma derecha (volteada) -->
-      <div
-        class="absolute right-1/2"
-        id="paloma-der"
-        style="transform: translateX(100%) scaleX(-1);"
-      >
-        <img
-          src="/imagenes/paloma.png"
-          alt="Paloma derecha"
-          class="w-16 md:w-32 lg:w-36 h-auto"
-        />
+      <div id="texto-invitacion">
+        <p class="font-charm text-xl leading-relaxed text-center" style="color: #d0727d;">
+          Tenemos el grato Honor de invitarlos a que sean parte de este día tan especial y esperado por nosotros.
+        </p>
+      </div>
+
+      <div class="flex items-center justify-center gap-2 mt-3">
+        <div style="width: 35px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
+        <div style="width: 4px; height: 4px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
+        <div style="width: 35px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
       </div>
     </div>
 
-    <!-- 💍 Texto "Acompáñanos este día tan especial" -->
-    <div class="mb-6" id="texto-invitacion-container">
-      <div class="flex items-center justify-center px-4">
-        <!-- 📝 TEXTO CENTRAL -->
-        <div id="texto-invitacion" class="flex-shrink-0">
-          <p
-            class="font-great-vibes text-3xl md:text-5xl lg:text-6xl text-[#9C7A2E] leading-[1.2] text-center"
-          >
-            Acompáñanos este día<br />tan especial
-          </p>
-        </div>
-      </div>
-    </div>
+    <!-- Flor derecha pegada al borde, espejada -->
+    <img id="flor-fecha-der" src="/imagenes/florlateral.png" alt=""
+      class="flex-shrink-0 pointer-events-none"
+      style="width: 38px; object-fit: contain; opacity: 0; transform: scaleX(-1);" />
 
-    <!-- Año 2026 ARRIBA -->
+  </div>
+
+  <!-- RESTO: año, fecha, hora — centrado con padding -->
+  <div class="text-center px-4">
+
+    <!-- Año -->
     <div class="mb-4 flex justify-center" id="anio-evento">
-      <p class="font-charm text-3xl md:text-4xl text-[#0F3D2E] font-bold">
-        2026
-      </p>
+      <p class="font-charm text-3xl md:text-4xl font-bold" style="color: #C9A96E;">2026</p>
     </div>
 
-    <!-- 📅 Fecha con líneas arriba y abajo -->
+    <!-- Fecha -->
     <div class="relative max-w-md mx-auto" id="fecha-evento">
       <div class="flex items-center justify-center gap-4 md:gap-16">
-        <!-- SÁBADO con líneas arriba y abajo -->
+
         <div class="flex flex-col items-center w-24 md:w-28">
-          <div class="w-full h-px bg-[#9C7A2E] mb-2"></div>
-          <span
-            class="font-charm text-lg md:text-3xl text-[#0F3D2E] uppercase tracking-wider font-bold text-center"
-          >
-            VIERNES
-          </span>
-          <div class="w-full h-px bg-[#9C7A2E] mt-2"></div>
+          <div class="w-full h-px mb-2" style="background: #C9A96E;"></div>
+          <span class="font-charm text-lg md:text-3xl uppercase tracking-wider font-bold text-center" style="color: #d0727d;">SÁBADO</span>
+          <div class="w-full h-px mt-2" style="background: #C9A96E;"></div>
         </div>
 
-        <!-- Número 26 - CENTRADO -->
-        <div
-          class="flex items-center justify-center min-w-[80px] md:min-w-[100px]"
-        >
-          <span
-            class="font-charm text-7xl md:text-8xl text-[#9C7A2E] font-bold"
-          >
-            29
-          </span>
+        <div class="flex items-center justify-center min-w-[80px] md:min-w-[100px]">
+          <span class="font-charm text-7xl md:text-8xl font-bold" style="color: #C9A96E;">20</span>
         </div>
 
-        <!-- SEPTIEMBRE con líneas arriba y abajo -->
         <div class="flex flex-col items-center w-24 md:w-28">
-          <div class="w-full h-px bg-[#9C7A2E] mb-2"></div>
-          <span
-            class="font-charm text-lg md:text-3xl text-[#0F3D2E] uppercase tracking-wider font-bold text-center"
-          >
-            MAYO
-          </span>
-          <div class="w-full h-px bg-[#9C7A2E] mt-2"></div>
+          <div class="w-full h-px mb-2" style="background: #C9A96E;"></div>
+          <span class="font-charm text-lg md:text-3xl uppercase tracking-wider font-bold text-center" style="color: #d0727d;">JUNIO</span>
+          <div class="w-full h-px mt-2" style="background: #C9A96E;"></div>
         </div>
+
       </div>
     </div>
 
-    <!-- HORA DEBAJO -->
+    <!-- Hora -->
     <div class="mt-6 flex justify-center" id="hora-evento">
-      <p
-        class="font-charm text-2xl md:text-3xl lg:text-4xl text-[#0F3D2E] font-bold"
-      >
-        18:00 Hrs.
-      </p>
+      <p class="font-charm text-2xl md:text-3xl lg:text-4xl font-bold" style="color: #d0727d;">19:00 Hrs.</p>
     </div>
+
   </div>
 </section>
 
@@ -213,6 +145,8 @@
         scaleY: 0.7,
       });
 
+      gsap.set("#flor-fecha-izq", { opacity: 0, x: -30 });
+      gsap.set("#flor-fecha-der", { opacity: 0, x:  30 });
       gsap.set("#texto-invitacion", { opacity: 0, x: -30, y: 15 });
       gsap.set("#anio-evento", { opacity: 0, x: 30, y: 15 });
       gsap.set("#fecha-evento", { opacity: 0, x: -30, y: 15 });
@@ -258,6 +192,9 @@
               },
               0,
             )
+            // FLORES LATERALES
+            .to("#flor-fecha-izq", { opacity: 0.9, x: 0, duration: 1.4, ease: "power2.out" }, 0.3)
+            .to("#flor-fecha-der", { opacity: 0.9, x: 0, duration: 1.4, ease: "power2.out" }, 0.3)
             // 2️⃣ TEXTO INVITACIÓN - Desliza desde la izquierda
             .to(
               "#texto-invitacion",

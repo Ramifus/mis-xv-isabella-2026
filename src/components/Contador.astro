@@ -2,215 +2,154 @@
 // ContadorRegresivo.astro
 ---
 
-<!-- ═══════════════════════════════════════════════════════════ --><!-- ⏰ COMPONENTE CONTADOR REGRESIVO                            --><!-- ═══════════════════════════════════════════════════════════ -->
 <section class="py-8 px-6">
-    <div class="max-w-md md:max-w-md lg:max-w-xl xl:max-w-2xl mx-auto">
-        <!-- CUENTA REGRESIVA - ESTILO COMPACTO -->
+    <div class="max-w-md mx-auto">
+
         <div class="relative" id="cuenta-regresiva">
-            <!-- Etiqueta "Faltan" arriba centrada -->
-            <div
-                class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-10"
-                id="texto-faltan"
-            >
-                <div
-                    class="bg-[#9C7A2E] text-white px-6 py-1.5 rounded-full shadow-md"
-                >
-                    <p class="font-sans text-sm md:text-base tracking-wide">
-                        Faltan
-                    </p>
+
+            <!-- Moño izquierdo — recto -->
+            <img
+                src="/imagenes/mono.png"
+                alt=""
+                id="mono-izq"
+                class="absolute pointer-events-none"
+                style="width: 52px; top: -22px; left: 8px; z-index: 10;"
+            />
+
+            <!-- Moño derecho — mono2, rotado a la derecha -->
+            <img
+                src="/imagenes/mono2.png"
+                alt=""
+                id="mono-der"
+                class="absolute pointer-events-none"
+                style="width: 52px; top: -22px; right: 8px; z-index: 10; transform: rotate(15deg);"
+            />
+
+            <!-- Etiqueta "Faltan" centrada arriba -->
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10" id="texto-faltan">
+                <div class="px-6 py-1.5 rounded-full shadow-md" style="background: #d0727d;">
+                    <p class="font-charm text-sm md:text-base tracking-wide text-white">Faltan</p>
                 </div>
             </div>
 
-            <!-- Contenedor principal con borde -->
+            <!-- Caja principal -->
             <div
-                class="bg-white border-2 border-[#9C7A2E] rounded-2xl pt-6 pb-4 md:py-10 px-6 shadow-sm"
+                class="bg-white rounded-2xl pt-8 pb-5 px-6 shadow-sm"
+                style="border: 2px solid #d0727d;"
             >
+                <!-- Línea decorativa superior -->
+                <div class="flex items-center justify-center gap-2 mb-4">
+                    <div style="width: 40px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
+                    <div style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
+                    <div style="width: 40px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
+                </div>
+
                 <div class="grid grid-cols-4 gap-3">
+
                     <!-- DÍAS -->
                     <div class="text-center">
-                        <p
-                            id="dias"
-                            class="font-sans text-3xl md:text-4xl text-[#0F3D2E] font-light mb-1"
-                        >
-                            00
-                        </p>
-                        <p
-                            class="font-sans text-[10px] md:text-base text-[#9C7A2E] uppercase tracking-wide"
-                        >
-                            Días
-                        </p>
+                        <p id="dias" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
+                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Días</p>
                     </div>
 
                     <!-- HORAS -->
                     <div class="text-center">
-                        <p
-                            id="horas"
-                            class="font-sans text-3xl md:text-4xl text-[#0F3D2E] font-light mb-1"
-                        >
-                            00
-                        </p>
-                        <p
-                            class="font-sans text-[10px] md:text-base text-[#9C7A2E] uppercase tracking-wide"
-                        >
-                            Hrs
-                        </p>
+                        <p id="horas" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
+                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Hrs</p>
                     </div>
 
                     <!-- MINUTOS -->
                     <div class="text-center">
-                        <p
-                            id="minutos"
-                            class="font-sans text-3xl md:text-4xl text-[#0F3D2E] font-light mb-1"
-                        >
-                            00
-                        </p>
-                        <p
-                            class="font-sans text-[10px] md:text-base text-[#9C7A2E] uppercase tracking-wide"
-                        >
-                            Mins
-                        </p>
+                        <p id="minutos" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
+                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Mins</p>
                     </div>
 
                     <!-- SEGUNDOS -->
                     <div class="text-center">
-                        <p
-                            id="segundos"
-                            class="font-sans text-3xl md:text-4xl text-[#0F3D2E] font-light mb-1"
-                        >
-                            00
-                        </p>
-                        <p
-                            class="font-sans text-[10px] md:text-base text-[#9C7A2E] uppercase tracking-wide"
-                        >
-                            Segs
-                        </p>
+                        <p id="segundos" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
+                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Segs</p>
                     </div>
+
+                </div>
+
+                <!-- Línea decorativa inferior -->
+                <div class="flex items-center justify-center gap-2 mt-4">
+                    <div style="width: 40px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
+                    <div style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
+                    <div style="width: 40px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!-- 🎬 ANIMACIONES CON GSAP Y CUENTA REGRESIVA                  -->
-<!-- ═══════════════════════════════════════════════════════════ -->
 <script>
     import { gsap } from "gsap";
     import { ScrollTrigger } from "gsap/ScrollTrigger";
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // ═══ CONFIGURACIÓN DE LA FECHA ═══
-    const FECHA_EVENTO = {
-        año: 2026,
-        mes: 5,
-        dia: 29,
-        hora: 18,
-        minuto: 0,
-    };
+    const FECHA_EVENTO = { año: 2026, mes: 6, dia: 20, hora: 19, minuto: 0 };
 
     const initContador = () => {
-        console.log("⏰ Iniciando contador regresivo...");
 
-        // ═══ ESTADO INICIAL ═══
-        gsap.set("#cuenta-regresiva", { opacity: 0, scale: 0.9 });
+        gsap.set("#cuenta-regresiva", { opacity: 0, y: 20, scale: 0.95 });
+        gsap.set("#mono-izq", { opacity: 0, x: -15, rotation: 0 });
+        gsap.set("#mono-der", { opacity: 0, x:  15, rotation: 15 });
 
-        // ═══ ANIMACIÓN DE ENTRADA ═══
         ScrollTrigger.create({
             trigger: "#cuenta-regresiva",
             start: "top 85%",
-            end: "top 20%",
 
             onEnter: () => {
-                gsap.to("#cuenta-regresiva", {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.8,
-                    ease: "back.out(1.4)",
-                });
+                const tl = gsap.timeline();
+                tl
+                    .to("#cuenta-regresiva", { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "back.out(1.4)" })
+                    .to("#mono-izq", { opacity: 1, x: 0, duration: 0.7, ease: "back.out(1.6)" }, 0.3)
+                    .to("#mono-der", { opacity: 1, x: 0, duration: 0.7, ease: "back.out(1.6)" }, 0.4);
+
+                // balanceo suave de los moños
+                gsap.to("#mono-izq", { rotation: -6, duration: 2.5, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.2, transformOrigin: "center top" });
+                gsap.to("#mono-der", { rotation: 20, duration: 2.8, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.4, transformOrigin: "center top" });
             },
 
             onLeaveBack: () => {
-                gsap.to("#cuenta-regresiva", {
-                    opacity: 0,
-                    scale: 0.9,
-                    duration: 0.5,
-                    ease: "power2.in",
-                });
+                gsap.killTweensOf(["#mono-izq", "#mono-der"]);
+                gsap.to("#cuenta-regresiva", { opacity: 0, y: 20, scale: 0.95, duration: 0.5, ease: "power2.in" });
+                gsap.to(["#mono-izq", "#mono-der"], { opacity: 0, duration: 0.4 });
             },
         });
 
-        // ═══ CUENTA REGRESIVA ═══
-        const fechaBoda = new Date(
-            FECHA_EVENTO.año,
-            FECHA_EVENTO.mes - 1,
-            FECHA_EVENTO.dia,
-            FECHA_EVENTO.hora,
-            FECHA_EVENTO.minuto,
-            0,
+        // Cuenta regresiva
+        const fechaEvento = new Date(
+            FECHA_EVENTO.año, FECHA_EVENTO.mes - 1, FECHA_EVENTO.dia,
+            FECHA_EVENTO.hora, FECHA_EVENTO.minuto, 0
         ).getTime();
 
-        console.log("📅 Fecha del evento:", new Date(fechaBoda));
-
-        function actualizarCuentaRegresiva() {
-            const ahora = new Date().getTime();
-            const diferencia = fechaBoda - ahora;
-
-            console.log("⏱️ Diferencia en ms:", diferencia);
-
-            if (diferencia > 0) {
-                const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
-                const horas = Math.floor(
-                    (diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-                );
-                const minutos = Math.floor(
-                    (diferencia % (1000 * 60 * 60)) / (1000 * 60),
-                );
-                const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
-
-                const diasEl = document.getElementById("dias");
-                const horasEl = document.getElementById("horas");
-                const minutosEl = document.getElementById("minutos");
-                const segundosEl = document.getElementById("segundos");
-
-                if (diasEl)
-                    diasEl.textContent = dias.toString().padStart(2, "0");
-                if (horasEl)
-                    horasEl.textContent = horas.toString().padStart(2, "0");
-                if (minutosEl)
-                    minutosEl.textContent = minutos.toString().padStart(2, "0");
-                if (segundosEl)
-                    segundosEl.textContent = segundos
-                        .toString()
-                        .padStart(2, "0");
-            } else {
-                // Cuando llegue la fecha
-                const diasEl = document.getElementById("dias");
-                const horasEl = document.getElementById("horas");
-                const minutosEl = document.getElementById("minutos");
-                const segundosEl = document.getElementById("segundos");
-
-                if (diasEl) diasEl.textContent = "00";
-                if (horasEl) horasEl.textContent = "00";
-                if (minutosEl) minutosEl.textContent = "00";
-                if (segundosEl) segundosEl.textContent = "00";
+        function actualizar() {
+            const diff = fechaEvento - new Date().getTime();
+            if (diff > 0) {
+                const d = Math.floor(diff / 86400000);
+                const h = Math.floor((diff % 86400000) / 3600000);
+                const m = Math.floor((diff % 3600000) / 60000);
+                const s = Math.floor((diff % 60000) / 1000);
+                document.getElementById("dias")!.textContent     = String(d).padStart(2,"0");
+                document.getElementById("horas")!.textContent    = String(h).padStart(2,"0");
+                document.getElementById("minutos")!.textContent  = String(m).padStart(2,"0");
+                document.getElementById("segundos")!.textContent = String(s).padStart(2,"0");
             }
         }
 
-        // Actualizar cada segundo
-        actualizarCuentaRegresiva();
-        setInterval(actualizarCuentaRegresiva, 1000);
-
-        console.log("⏰✨ Contador regresivo activado!");
+        actualizar();
+        setInterval(actualizar, 1000);
     };
 
-    // Ejecutar cuando el DOM esté listo
     if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", initContador);
     } else {
         initContador();
     }
 
-    // También ejecutar en Astro page load (para navegación entre páginas)
     document.addEventListener("astro:page-load", initContador);
 </script>

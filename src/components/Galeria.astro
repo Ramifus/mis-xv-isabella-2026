@@ -4,23 +4,25 @@
 
 <section class="relative w-full py-8 px-6" id="seccion-galeria">
 
+    <!-- Separador arriba — borde a borde -->
+    <div class="w-full mb-6" style="margin-left: -1.5rem; width: calc(100% + 3rem);">
+        <img src="/imagenes/separador.png" alt="" class="w-full object-contain block" />
+    </div>
+
     <!-- TÍTULO -->
     <div class="text-center mb-8 opacity-0" id="galeria-titulo">
         <h2
-            class="font-charm text-2xl md:text-3xl lg:text-3xl text-[#9C7A2E] font-bold mb-3 tracking-[0.2em] uppercase"
+            class="font-crimson text-2xl md:text-3xl uppercase tracking-[0.2em] font-semibold mb-3"
+            style="color: #C9A96E;"
         >
             Galería de fotos
         </h2>
         <div class="flex items-center justify-center gap-3 mb-4">
-            <div
-                class="w-16 h-[2px] bg-gradient-to-r from-transparent to-[#9C7A2E]"
-            ></div>
-            <div class="w-2 h-2 rounded-full bg-[#9C7A2E]"></div>
-            <div
-                class="w-16 h-[2px] bg-gradient-to-l from-transparent to-[#9C7A2E]"
-            ></div>
+            <div style="width: 50px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
+            <div style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
+            <div style="width: 50px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
         </div>
-        <p class="font-charm text-lg md:text-xl text-[#0F3D2E]/70">
+        <p class="font-charm text-xl" style="color: #d0727d;">
             Momentos que el corazón nunca olvida
         </p>
     </div>
@@ -59,12 +61,12 @@
             <!-- Círculo progreso -->
             <div class="absolute top-4 right-4 z-30">
                 <svg width="36" height="36" viewBox="0 0 36 36" class="rotate-[-90deg]">
-                    <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(156,122,46,0.2)" stroke-width="2"></circle>
+                    <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(208,114,125,0.2)" stroke-width="2"></circle>
                     <circle
                         id="progreso-circulo"
                         cx="18" cy="18" r="15"
                         fill="none"
-                        stroke="rgba(156,122,46,0.9)"
+                        stroke="rgba(208,114,125,0.9)"
                         stroke-width="2"
                         stroke-dasharray="94.2"
                         stroke-dashoffset="94.2"
@@ -102,7 +104,7 @@
         <!-- Crédito -->
         <div class="flex items-center justify-center gap-4 mt-4 opacity-0" id="credito-galeria">
             <div style="height:1px; flex:1; background: linear-gradient(to right, transparent, #9C7A2E);"></div>
-            <span class="text-[#9C7A2E]/60 text-xs tracking-[0.3em] uppercase font-charm">Nuestra galería</span>
+            <span class="text-[#C9A96E]/60 text-xs tracking-[0.3em] uppercase font-charm">Nuestra galería</span>
             <div style="height:1px; flex:1; background: linear-gradient(to left, transparent, #9C7A2E);"></div>
         </div>
     </div>
@@ -118,9 +120,9 @@
         <button
             id="cerrar-modal"
             class="absolute top-6 right-6 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 z-50 hover:rotate-90"
-            style="background: rgba(156,122,46,0.15); border: 1px solid rgba(156,122,46,0.3);"
+            style="background: rgba(208,114,125,0.15); border: 1px solid rgba(208,114,125,0.3);"
         >
-            <svg class="w-5 h-5" fill="none" stroke="#9C7A2E" viewBox="0 0 24 24">
+            <svg class="w-5 h-5" fill="none" stroke="#d0727d" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
@@ -129,9 +131,9 @@
             <button
                 id="btn-anterior"
                 class="absolute left-3 md:left-8 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                style="background: rgba(156,122,46,0.12); border: 1px solid rgba(156,122,46,0.25);"
+                style="background: rgba(208,114,125,0.12); border: 1px solid rgba(208,114,125,0.25);"
             >
-                <svg class="w-6 h-6" fill="none" stroke="#9C7A2E" viewBox="0 0 24 24">
+                <svg class="w-6 h-6" fill="none" stroke="#d0727d" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
             </button>
@@ -145,7 +147,7 @@
                 </div>
                 <div id="modal-track" class="flex will-change-transform"></div>
                 <div class="absolute -bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-3 whitespace-nowrap">
-                    <span id="modal-num" class="font-charm text-[#9C7A2E]/70 text-base">01</span>
+                    <span id="modal-num" class="font-charm text-[#C9A96E]/70 text-base">01</span>
                     <div class="flex gap-1" id="modal-dots-mini"></div>
                     <span class="font-charm text-white/30 text-base" id="modal-total">13</span>
                 </div>
@@ -154,9 +156,9 @@
             <button
                 id="btn-siguiente"
                 class="absolute right-3 md:right-8 z-40 w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110"
-                style="background: rgba(156,122,46,0.12); border: 1px solid rgba(156,122,46,0.25);"
+                style="background: rgba(208,114,125,0.12); border: 1px solid rgba(208,114,125,0.25);"
             >
-                <svg class="w-6 h-6" fill="none" stroke="#9C7A2E" viewBox="0 0 24 24">
+                <svg class="w-6 h-6" fill="none" stroke="#d0727d" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
             </button>
@@ -227,19 +229,19 @@
                             style="transform-origin: center top;" />
                     </div>
                     <div class="absolute inset-0"
-                        style="background: linear-gradient(135deg, rgba(156,122,46,0.06) 0%, transparent 50%, rgba(15,61,46,0.06) 100%);">
+                        style="background: linear-gradient(135deg, rgba(208,114,125,0.06) 0%, transparent 50%, rgba(15,61,46,0.06) 100%);">
                     </div>
                     <div class="slide-hover-icon absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-500">
                         <div class="relative">
                             <div class="w-20 h-20 rounded-full flex items-center justify-center"
-                                style="background: rgba(156,122,46,0.2); backdrop-filter: blur(8px); border: 1px solid rgba(156,122,46,0.4);">
-                                <svg class="w-8 h-8" fill="none" stroke="#9C7A2E" viewBox="0 0 24 24">
+                                style="background: rgba(208,114,125,0.2); backdrop-filter: blur(8px); border: 1px solid rgba(208,114,125,0.4);">
+                                <svg class="w-8 h-8" fill="none" stroke="#d0727d" viewBox="0 0 24 24">
                                     <circle cx="10.5" cy="10.5" r="6.5" stroke-width="1.5"></circle>
                                     <path d="M15.5 15.5L21 21" stroke-width="1.5"></path>
                                 </svg>
                             </div>
                             <div class="absolute inset-0 rounded-full animate-ping"
-                                style="border: 1px solid rgba(156,122,46,0.3);"></div>
+                                style="border: 1px solid rgba(208,114,125,0.3);"></div>
                         </div>
                     </div>
                 `;
@@ -257,7 +259,7 @@
                 if (dotsLateral) {
                     const dot = document.createElement("div");
                     dot.className = "dot-lat transition-all duration-500 rounded-full";
-                    dot.style.cssText = `width:${i === 0 ? "8px" : "4px"}; height:${i === 0 ? "8px" : "4px"}; background:${i === 0 ? "rgba(156,122,46,0.9)" : "rgba(156,122,46,0.3)"}`;
+                    dot.style.cssText = `width:${i === 0 ? "8px" : "4px"}; height:${i === 0 ? "8px" : "4px"}; background:${i === 0 ? "rgba(208,114,125,0.9)" : "rgba(208,114,125,0.3)"}`;
                     dotsLateral.appendChild(dot);
                 }
 
@@ -265,7 +267,7 @@
                     const mini = document.createElement("button");
                     mini.className = "miniatura-btn flex-shrink-0 snap-start rounded-xl overflow-hidden";
                     mini.setAttribute("data-mini", i.toString());
-                    mini.style.cssText = `width:52px; height:52px; border:2px solid ${i === 0 ? "rgba(156,122,46,0.9)" : "rgba(156,122,46,0.2)"}; opacity:${i === 0 ? "1" : "0.6"};`;
+                    mini.style.cssText = `width:52px; height:52px; border:2px solid ${i === 0 ? "rgba(208,114,125,0.9)" : "rgba(208,114,125,0.2)"}; opacity:${i === 0 ? "1" : "0.6"};`;
                     mini.innerHTML = `<img src="${foto.src}" alt="${foto.alt}" class="w-full h-full object-cover object-top" />`;
                     mini.addEventListener("click", () => {
                         irASlide(i);
@@ -320,12 +322,12 @@
                     const el = d as HTMLElement;
                     el.style.width = i === index ? "8px" : "4px";
                     el.style.height = i === index ? "8px" : "4px";
-                    el.style.background = i === index ? "rgba(156,122,46,0.9)" : "rgba(156,122,46,0.3)";
+                    el.style.background = i === index ? "rgba(208,114,125,0.9)" : "rgba(208,114,125,0.3)";
                 });
                 if (numSlide) numSlide.textContent = String(index + 1).padStart(2, "0");
                 document.querySelectorAll(".miniatura-btn").forEach((m, i) => {
                     const el = m as HTMLElement;
-                    el.style.border = i === index ? "2px solid rgba(156,122,46,0.9)" : "2px solid rgba(156,122,46,0.2)";
+                    el.style.border = i === index ? "2px solid rgba(208,114,125,0.9)" : "2px solid rgba(208,114,125,0.2)";
                     el.style.opacity = i === index ? "1" : "0.6";
                 });
                 const miniActiva = document.querySelector(`[data-mini="${index}"]`) as HTMLElement;
@@ -424,7 +426,7 @@
                 const slide = document.createElement("div");
                 slide.className = "min-w-full flex items-center justify-center px-2";
                 slide.innerHTML = `
-                    <div class="relative w-full rounded-2xl overflow-hidden" style="border:1px solid rgba(156,122,46,0.15);">
+                    <div class="relative w-full rounded-2xl overflow-hidden" style="border:1px solid rgba(208,114,125,0.15);">
                         <img src="${foto.src}" alt="${foto.alt}" class="w-full h-auto max-h-[80vh] object-contain" style="background:rgba(0,0,0,0.3);" />
                     </div>
                 `;
@@ -435,7 +437,7 @@
                 if (!modalDotsMini) return;
                 const d = document.createElement("div");
                 d.className = "modal-dot-mini rounded-full";
-                d.style.cssText = `width:${i === 0 ? "16px" : "4px"}; height:4px; background:${i === 0 ? "rgba(156,122,46,0.8)" : "rgba(156,122,46,0.2)"}; transition:all 0.4s;`;
+                d.style.cssText = `width:${i === 0 ? "16px" : "4px"}; height:4px; background:${i === 0 ? "rgba(208,114,125,0.8)" : "rgba(208,114,125,0.2)"}; transition:all 0.4s;`;
                 modalDotsMini.appendChild(d);
             });
 
@@ -445,7 +447,7 @@
                 document.querySelectorAll(".modal-dot-mini").forEach((d, i) => {
                     const el = d as HTMLElement;
                     el.style.width = i === index ? "16px" : "4px";
-                    el.style.background = i === index ? "rgba(156,122,46,0.8)" : "rgba(156,122,46,0.2)";
+                    el.style.background = i === index ? "rgba(208,114,125,0.8)" : "rgba(208,114,125,0.2)";
                 });
                 if (modalNum) modalNum.textContent = String(index + 1).padStart(2, "0");
             }
@@ -467,7 +469,7 @@
                 container.innerHTML = "";
                 for (let i = 0; i < 12; i++) {
                     const p = document.createElement("div");
-                    p.style.cssText = `position:absolute; width:${Math.random() * 3 + 1}px; height:${Math.random() * 3 + 1}px; background:rgba(156,122,46,${Math.random() * 0.3 + 0.1}); border-radius:50%; left:${Math.random() * 100}%; top:${Math.random() * 100}%;`;
+                    p.style.cssText = `position:absolute; width:${Math.random() * 3 + 1}px; height:${Math.random() * 3 + 1}px; background:rgba(208,114,125,${Math.random() * 0.3 + 0.1}); border-radius:50%; left:${Math.random() * 100}%; top:${Math.random() * 100}%;`;
                     container.appendChild(p);
                     gsap.to(p, {
                         y: -30 - Math.random() * 40, x: (Math.random() - 0.5) * 20,
@@ -563,7 +565,7 @@
         align-items: center;
         gap: 8px;
         padding: 10px 28px;
-        background: #4E5F49;
+        background: #d0727d;
         color: white;
         border: none;
         border-radius: 50px;
@@ -574,7 +576,7 @@
         transition: all 0.3s ease;
     }
     .boton-galeria:hover {
-        background: #3d4a39;
+        background: #c45c6a;
         box-shadow: 0 4px 16px rgba(78, 95, 73, 0.4);
         transform: translateY(-2px);
     }

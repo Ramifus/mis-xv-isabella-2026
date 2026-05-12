@@ -1,28 +1,42 @@
 ---
-// DedicatoriaDespedida.astro - Dedicatoria elegante para despedida
+// Final.astro
 ---
 
-<div class="flex justify-center mt-16 bg-[#4E5F49]">
-    <div
-        class="w-full max-w-4xl xl:max-w-7xl px-4 py-6 text-center"
-        id="wrapper-dedicatoria"
-    >
-        <p
-            id="texto-dedicatoria"
-            class="font-charm text-white text-xl md:text-2xl lg:text-3xl xl:text-3xl leading-snug tracking-wider opacity-0 mb-4"
-        >
-            El amor nunca se da por vencido, jamás pierde la fe, siempre tiene
-            esperanza y se mantiene firme en toda circunstancia
-        </p>
-
-        <p
-            id="referencia-dedicatoria"
-            class="font-cormorant text-[#C9A961] text-base md:text-xl lg:text-2xl tracking-[0.35em] md:tracking-[0.4em] uppercase opacity-0"
-        >
-            1 Corintios 13:7
-        </p>
+<section class="relative w-full xl:px-40 overflow-hidden" id="seccion-final">
+    <!-- CONTENEDOR DE MARIPOSAS FLOTANTES -->
+    <div class="relative w-full h-32 md:h-40 lg:h-48" id="mariposas-final">
+        <!-- Mariposa 1 - Izquierda -->
     </div>
-</div>
+
+    <!-- ===== CONTENEDOR CON IMAGEN SOBRE FLORES ===== -->
+    <div class="relative w-full" id="imagen-flores-container">
+        <!-- FLORES ABAJO - FULL WIDTH VOLTEADAS -->
+        <div class="relative w-full" id="flores-final">
+            <img
+                src="/imagenes/floresarriba.png"
+                alt="Flores decorativas finales"
+                class="w-full h-auto object-cover object-center block rotate-180"
+            />
+        </div>
+
+        <!-- IMAGEN QUINCEAÑERA SOBRE LAS FLORES -->
+        <div
+            class="absolute inset-0 flex items-center justify-center px-4"
+            id="imagen-quinceañera-container"
+        >
+            <div
+                class="max-w-xl md:max-w-2xl lg:max-w-3xl w-full"
+                id="imagen-quinceañera"
+            >
+                <img
+                    src="/imagenes/silueta.png"
+                    alt="Quinceañera"
+                    class="w-full h-auto object-contain drop-shadow-2xl"
+                />
+            </div>
+        </div>
+    </div>
+</section>
 
 <script>
     import { gsap } from "gsap";
@@ -30,63 +44,142 @@
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const initDedicatoriaAnim = () => {
-        const texto = document.getElementById("texto-dedicatoria");
-        const referencia = document.getElementById("referencia-dedicatoria");
-        if (!texto || !referencia) return;
+    if (typeof window !== "undefined") {
+        document.addEventListener("DOMContentLoaded", () => {
+            console.log("🦋 Iniciando sección final...");
 
-        console.log("💝 Iniciando componente Dedicatoria Despedida...");
+            // 🎯 ESTADO INICIAL
+            gsap.set("#flores-final", { opacity: 0, y: 30 });
+            gsap.set("#imagen-quinceañera", { opacity: 0, scale: 0.9, y: 40 });
+            gsap.set(".mariposa-flotante", { opacity: 0, scale: 0.5, y: -20 });
 
-        // 🎯 ESTADO INICIAL - Todo oculto
-        gsap.set(texto, { opacity: 0, y: 20 });
-        gsap.set(referencia, { opacity: 0, y: 10 });
+            // ✨ ANIMACIÓN CONJUNTA DE TODA LA SECCIÓN
+            ScrollTrigger.create({
+                trigger: "#seccion-final",
+                start: "top 80%",
+                end: "top 20%",
+                onEnter: () => {
+                    const tl = gsap.timeline();
 
-        // ✨ ANIMACIÓN QUE SE REPITE AL BAJAR/SUBIR
-        ScrollTrigger.create({
-            trigger: "#wrapper-dedicatoria",
-            start: "top 90%",
-            end: "top 20%",
+                    // Todos los elementos aparecen al mismo tiempo
+                    tl.to(
+                        "#flores-final",
+                        {
+                            opacity: 1,
+                            y: 0,
+                            duration: 0.8,
+                            ease: "power2.out",
+                        },
+                        0,
+                    ) // 0 = inicio del timeline
+                        .to(
+                            "#imagen-quinceañera",
+                            {
+                                opacity: 1,
+                                scale: 1,
+                                y: 0,
+                                duration: 0.8,
+                                ease: "power3.out",
+                            },
+                            0,
+                        ) // 0 = mismo tiempo que flores
+                        .to(
+                            ".mariposa-flotante",
+                            {
+                                opacity: 1,
+                                scale: 1,
+                                y: 0,
+                                duration: 0.8,
+                                ease: "back.out(1.5)",
+                                stagger: 0.08,
+                            },
+                            0,
+                        ); // 0 = mismo tiempo que todo
 
-            onEnter: () => {
-                // Anima el texto principal primero
-                gsap.to(texto, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.5,
-                    ease: "power3.out",
-                });
+                    // 🦋 ANIMACIONES CONTINUAS DE MARIPOSAS (después de aparecer)
+                    gsap.to("#mariposa-final-1", {
+                        y: -15,
+                        x: 10,
+                        rotation: 5,
+                        duration: 3,
+                        ease: "sine.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 0.8,
+                    });
 
-                // Luego la referencia bíblica
-                gsap.to(referencia, {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                    delay: 0.3,
-                    ease: "power3.out",
-                });
-            },
+                    gsap.to("#mariposa-final-2", {
+                        y: -20,
+                        x: -8,
+                        rotation: -3,
+                        duration: 3.5,
+                        ease: "sine.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 1,
+                    });
 
-            onLeaveBack: () => {
-                // Resetea cuando subes
-                gsap.to(texto, {
-                    opacity: 0,
-                    y: 20,
-                    duration: 0.4,
-                    ease: "power2.in",
-                });
+                    gsap.to("#mariposa-final-4", {
+                        y: -12,
+                        x: 12,
+                        rotation: -5,
+                        duration: 3.2,
+                        ease: "sine.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 1.2,
+                    });
 
-                gsap.to(referencia, {
-                    opacity: 0,
-                    y: 10,
-                    duration: 0.4,
-                    ease: "power2.in",
-                });
-            },
+                    gsap.to("#mariposa-final-5", {
+                        y: -16,
+                        x: -10,
+                        rotation: 4,
+                        duration: 3.8,
+                        ease: "sine.inOut",
+                        yoyo: true,
+                        repeat: -1,
+                        delay: 1.4,
+                    });
+                },
+                onLeaveBack: () => {
+                    gsap.set("#flores-final", { opacity: 0, y: 30 });
+                    gsap.set("#imagen-quinceañera", {
+                        opacity: 0,
+                        scale: 0.9,
+                        y: 40,
+                    });
+                    gsap.set(".mariposa-flotante", {
+                        opacity: 0,
+                        scale: 0.5,
+                        y: -20,
+                    });
+                },
+            });
+
+            console.log("🦋✨ ¡Sección final activada con animación conjunta!");
         });
-
-        console.log("💝✨ Dedicatoria Despedida activada!");
-    };
-
-    document.addEventListener("DOMContentLoaded", initDedicatoriaAnim);
-    document.addEventListener("astro:page-load", initDedicatoriaAnim);
+    }
 </script>
+
+<style>
+    /* Asegurar que las mariposas tengan un movimiento fluido */
+    .mariposa-flotante {
+        will-change: transform;
+        transition: all 0.3s ease;
+    }
+
+    /* Hover en las mariposas */
+    .mariposa-flotante:hover {
+        transform: scale(1.1) !important;
+        filter: brightness(1.2);
+    }
+
+    /* Transición suave en la imagen */
+    #imagen-quinceañera img {
+        transition: transform 0.5s ease;
+    }
+
+    #imagen-quinceañera:hover img {
+        transform: scale(1.03);
+    }
+</style>

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(findstr mono *)",
+      "Bash(findstr -i cinta)",
+      "Bash(findstr -i calendario)"
+    ]
+  }
+}
