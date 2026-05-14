@@ -1,15 +1,13 @@
----
+﻿---
 // ContadorRegresivo.astro
 ---
 
 <section class="py-8 px-6">
     <div class="max-w-md mx-auto">
-
         <div class="relative" id="cuenta-regresiva">
-
             <!-- Moño izquierdo — recto -->
             <img
-                src="/imagenes/mono.png"
+                src="/imagenes/mono2.png"
                 alt=""
                 id="mono-izq"
                 class="absolute pointer-events-none"
@@ -26,60 +24,129 @@
             />
 
             <!-- Etiqueta "Faltan" centrada arriba -->
-            <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10" id="texto-faltan">
-                <div class="px-6 py-1.5 rounded-full shadow-md" style="background: #d0727d;">
-                    <p class="font-charm text-sm md:text-base tracking-wide text-white">Faltan</p>
+            <div
+                class="absolute -top-3 left-1/2 -translate-x-1/2 z-10"
+                id="texto-faltan"
+            >
+                <div
+                    class="px-6 py-1.5 rounded-full shadow-md"
+                    style="background: #8B1A3D;"
+                >
+                    <p
+                        class="font-charm text-sm md:text-base tracking-wide text-white"
+                    >
+                        Faltan
+                    </p>
                 </div>
             </div>
 
             <!-- Caja principal -->
             <div
                 class="bg-white rounded-2xl pt-8 pb-5 px-6 shadow-sm"
-                style="border: 2px solid #d0727d;"
+                style="border: 2px solid #8B1A3D;"
             >
                 <!-- Línea decorativa superior -->
                 <div class="flex items-center justify-center gap-2 mb-4">
-                    <div style="width: 40px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
-                    <div style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
-                    <div style="width: 40px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
+                    <div
+                        style="width: 40px; height: 1px; background: linear-gradient(to right, transparent, #8B7355);"
+                    >
+                    </div>
+                    <div
+                        style="width: 5px; height: 5px; border-radius: 50%; background: #8B7355; opacity: 0.8;"
+                    >
+                    </div>
+                    <div
+                        style="width: 40px; height: 1px; background: linear-gradient(to left, transparent, #8B7355);"
+                    >
+                    </div>
                 </div>
 
                 <div class="grid grid-cols-4 gap-3">
-
                     <!-- DÍAS -->
                     <div class="text-center">
-                        <p id="dias" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
-                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Días</p>
+                        <p
+                            id="dias"
+                            class="font-crimson text-4xl md:text-5xl font-bold mb-1"
+                            style="color: #8B1A3D;"
+                        >
+                            00
+                        </p>
+                        <p
+                            class="font-charm text-xs md:text-sm uppercase tracking-widest"
+                            style="color: #8B7355;"
+                        >
+                            Días
+                        </p>
                     </div>
 
                     <!-- HORAS -->
                     <div class="text-center">
-                        <p id="horas" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
-                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Hrs</p>
+                        <p
+                            id="horas"
+                            class="font-crimson text-4xl md:text-5xl font-bold mb-1"
+                            style="color: #8B1A3D;"
+                        >
+                            00
+                        </p>
+                        <p
+                            class="font-charm text-xs md:text-sm uppercase tracking-widest"
+                            style="color: #8B7355;"
+                        >
+                            Hrs
+                        </p>
                     </div>
 
                     <!-- MINUTOS -->
                     <div class="text-center">
-                        <p id="minutos" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
-                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Mins</p>
+                        <p
+                            id="minutos"
+                            class="font-crimson text-4xl md:text-5xl font-bold mb-1"
+                            style="color: #8B1A3D;"
+                        >
+                            00
+                        </p>
+                        <p
+                            class="font-charm text-xs md:text-sm uppercase tracking-widest"
+                            style="color: #8B7355;"
+                        >
+                            Mins
+                        </p>
                     </div>
 
                     <!-- SEGUNDOS -->
                     <div class="text-center">
-                        <p id="segundos" class="font-crimson text-4xl md:text-5xl font-bold mb-1" style="color: #d0727d;">00</p>
-                        <p class="font-charm text-xs md:text-sm uppercase tracking-widest" style="color: #C9A96E;">Segs</p>
+                        <p
+                            id="segundos"
+                            class="font-crimson text-4xl md:text-5xl font-bold mb-1"
+                            style="color: #8B1A3D;"
+                        >
+                            00
+                        </p>
+                        <p
+                            class="font-charm text-xs md:text-sm uppercase tracking-widest"
+                            style="color: #8B7355;"
+                        >
+                            Segs
+                        </p>
                     </div>
-
                 </div>
 
                 <!-- Línea decorativa inferior -->
                 <div class="flex items-center justify-center gap-2 mt-4">
-                    <div style="width: 40px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
-                    <div style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
-                    <div style="width: 40px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
+                    <div
+                        style="width: 40px; height: 1px; background: linear-gradient(to right, transparent, #8B7355);"
+                    >
+                    </div>
+                    <div
+                        style="width: 5px; height: 5px; border-radius: 50%; background: #8B7355; opacity: 0.8;"
+                    >
+                    </div>
+                    <div
+                        style="width: 40px; height: 1px; background: linear-gradient(to left, transparent, #8B7355);"
+                    >
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>
@@ -93,10 +160,9 @@
     const FECHA_EVENTO = { año: 2026, mes: 6, dia: 20, hora: 19, minuto: 0 };
 
     const initContador = () => {
-
         gsap.set("#cuenta-regresiva", { opacity: 0, y: 20, scale: 0.95 });
         gsap.set("#mono-izq", { opacity: 0, x: -15, rotation: 0 });
-        gsap.set("#mono-der", { opacity: 0, x:  15, rotation: 15 });
+        gsap.set("#mono-der", { opacity: 0, x: 15, rotation: 15 });
 
         ScrollTrigger.create({
             trigger: "#cuenta-regresiva",
@@ -104,27 +170,79 @@
 
             onEnter: () => {
                 const tl = gsap.timeline();
-                tl
-                    .to("#cuenta-regresiva", { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "back.out(1.4)" })
-                    .to("#mono-izq", { opacity: 1, x: 0, duration: 0.7, ease: "back.out(1.6)" }, 0.3)
-                    .to("#mono-der", { opacity: 1, x: 0, duration: 0.7, ease: "back.out(1.6)" }, 0.4);
+                tl.to("#cuenta-regresiva", {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 0.9,
+                    ease: "back.out(1.4)",
+                })
+                    .to(
+                        "#mono-izq",
+                        {
+                            opacity: 1,
+                            x: 0,
+                            duration: 0.7,
+                            ease: "back.out(1.6)",
+                        },
+                        0.3,
+                    )
+                    .to(
+                        "#mono-der",
+                        {
+                            opacity: 1,
+                            x: 0,
+                            duration: 0.7,
+                            ease: "back.out(1.6)",
+                        },
+                        0.4,
+                    );
 
                 // balanceo suave de los moños
-                gsap.to("#mono-izq", { rotation: -6, duration: 2.5, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.2, transformOrigin: "center top" });
-                gsap.to("#mono-der", { rotation: 20, duration: 2.8, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.4, transformOrigin: "center top" });
+                gsap.to("#mono-izq", {
+                    rotation: -6,
+                    duration: 2.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    delay: 1.2,
+                    transformOrigin: "center top",
+                });
+                gsap.to("#mono-der", {
+                    rotation: 20,
+                    duration: 2.8,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    delay: 1.4,
+                    transformOrigin: "center top",
+                });
             },
 
             onLeaveBack: () => {
                 gsap.killTweensOf(["#mono-izq", "#mono-der"]);
-                gsap.to("#cuenta-regresiva", { opacity: 0, y: 20, scale: 0.95, duration: 0.5, ease: "power2.in" });
-                gsap.to(["#mono-izq", "#mono-der"], { opacity: 0, duration: 0.4 });
+                gsap.to("#cuenta-regresiva", {
+                    opacity: 0,
+                    y: 20,
+                    scale: 0.95,
+                    duration: 0.5,
+                    ease: "power2.in",
+                });
+                gsap.to(["#mono-izq", "#mono-der"], {
+                    opacity: 0,
+                    duration: 0.4,
+                });
             },
         });
 
         // Cuenta regresiva
         const fechaEvento = new Date(
-            FECHA_EVENTO.año, FECHA_EVENTO.mes - 1, FECHA_EVENTO.dia,
-            FECHA_EVENTO.hora, FECHA_EVENTO.minuto, 0
+            FECHA_EVENTO.año,
+            FECHA_EVENTO.mes - 1,
+            FECHA_EVENTO.dia,
+            FECHA_EVENTO.hora,
+            FECHA_EVENTO.minuto,
+            0,
         ).getTime();
 
         function actualizar() {
@@ -134,10 +252,18 @@
                 const h = Math.floor((diff % 86400000) / 3600000);
                 const m = Math.floor((diff % 3600000) / 60000);
                 const s = Math.floor((diff % 60000) / 1000);
-                document.getElementById("dias")!.textContent     = String(d).padStart(2,"0");
-                document.getElementById("horas")!.textContent    = String(h).padStart(2,"0");
-                document.getElementById("minutos")!.textContent  = String(m).padStart(2,"0");
-                document.getElementById("segundos")!.textContent = String(s).padStart(2,"0");
+                document.getElementById("dias")!.textContent = String(
+                    d,
+                ).padStart(2, "0");
+                document.getElementById("horas")!.textContent = String(
+                    h,
+                ).padStart(2, "0");
+                document.getElementById("minutos")!.textContent = String(
+                    m,
+                ).padStart(2, "0");
+                document.getElementById("segundos")!.textContent = String(
+                    s,
+                ).padStart(2, "0");
             }
         }
 

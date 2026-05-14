@@ -1,4 +1,4 @@
----
+﻿---
 // SugerenciaRegalo.astro
 ---
 
@@ -45,7 +45,7 @@
             />
             <h3
                 class="font-crimson uppercase tracking-[0.2em] text-xl font-semibold"
-                style="color: #C9A96E;"
+                style="color: #8B7355;"
             >
                 Sugerencia<br />de Regalo
             </h3>
@@ -60,15 +60,15 @@
         <!-- Línea decorativa -->
         <div class="flex items-center justify-center gap-3 mb-5">
             <div
-                style="width: 50px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"
+                style="width: 50px; height: 1px; background: linear-gradient(to right, transparent, #8B7355);"
             >
             </div>
             <div
-                style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"
+                style="width: 5px; height: 5px; border-radius: 50%; background: #8B7355; opacity: 0.8;"
             >
             </div>
             <div
-                style="width: 50px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"
+                style="width: 50px; height: 1px; background: linear-gradient(to left, transparent, #8B7355);"
             >
             </div>
         </div>
@@ -77,7 +77,7 @@
         <div id="texto-regalo">
             <p
                 class="font-charm text-xl leading-relaxed mb-6"
-                style="color: #d0727d;"
+                style="color: #8B1A3D;"
             >
                 Tu presencia es mi mejor regalo, pero si deseas tener un detalle
                 conmigo, puedes hacerlo a través del siguiente QR
@@ -88,7 +88,7 @@
         <div class="flex justify-center mb-4" id="qr-container">
             <div
                 class="rounded-2xl p-3"
-                style="border: 2px solid #d0727d33; background: white;"
+                style="border: 2px solid #8B1A3D33; background: white;"
             >
                 <img
                     src="/imagenes/qr.png"
@@ -99,24 +99,24 @@
         </div>
 
         <!-- Nombre de cuenta debajo del QR -->
-        <p class="font-crimson uppercase tracking-widest text-sm mt-3" style="color: #C9A96E; letter-spacing: 0.2em;">Nombre de cuenta</p>
-        <p class="font-charm text-xl mt-1 mb-1" style="color: #d0727d;">Libaneza Aramayo Mapatoto</p>
+        <!-- <p class="font-crimson uppercase tracking-widest text-sm mt-3" style="color: #8B7355; letter-spacing: 0.2em;">Nombre de cuenta</p>
+        <p class="font-charm text-xl mt-1 mb-1" style="color: #8B1A3D;">Libaneza Aramayo Mapatoto</p> -->
 
         <!-- Puntos decorativos -->
         <div class="flex justify-center gap-2 mb-4">
             <div
                 class="w-1.5 h-1.5 rounded-full"
-                style="background: #d0727d; opacity: 0.5;"
+                style="background: #8B1A3D; opacity: 0.5;"
             >
             </div>
             <div
                 class="w-1.5 h-1.5 rounded-full"
-                style="background: #C9A96E; opacity: 0.6;"
+                style="background: #8B7355; opacity: 0.6;"
             >
             </div>
             <div
                 class="w-1.5 h-1.5 rounded-full"
-                style="background: #d0727d; opacity: 0.5;"
+                style="background: #8B1A3D; opacity: 0.5;"
             >
             </div>
         </div>
@@ -196,12 +196,11 @@
                 });
                 gsap.to("#mono-der", {
                     rotation: -7,
-                    scaleX: -1,
-                    duration: 2.8,
+                    duration: 2.5,
                     repeat: -1,
                     yoyo: true,
                     ease: "sine.inOut",
-                    delay: 1.4,
+                    delay: 1.2,
                     transformOrigin: "center top",
                 });
             },

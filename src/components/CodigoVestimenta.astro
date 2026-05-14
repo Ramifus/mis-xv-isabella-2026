@@ -1,74 +1,134 @@
----
+﻿---
 // CodigoVestimenta.astro
 ---
 
 <section class="relative w-full py-8 px-6 overflow-hidden">
-
     <!-- Separador arriba — borde a borde -->
-    <div class="w-full mb-6" style="margin-left: -1.5rem; width: calc(100% + 3rem);">
-        <img src="/imagenes/separador.png" alt="" class="w-full object-contain block" />
+    <div
+        class="w-full mb-6"
+        style="margin-left: -1.5rem; width: calc(100% + 3rem);"
+    >
+        <img
+            src="/imagenes/separador.png"
+            alt=""
+            class="w-full object-contain block"
+        />
     </div>
 
     <!-- Flores laterales pegadas al borde -->
-    <img src="/imagenes/florlateral.png" alt="" id="flor-vest-izq"
+    <img
+        src="/imagenes/florlateral.png"
+        alt=""
+        id="flor-vest-izq"
         class="absolute pointer-events-none"
-        style="width: 48px; left: 0; top: 55%; transform: translateY(-50%);" />
-    <img src="/imagenes/florlateral.png" alt="" id="flor-vest-der"
+        style="width: 48px; left: 0; top: 55%; transform: translateY(-50%);"
+    />
+    <img
+        src="/imagenes/florlateral.png"
+        alt=""
+        id="flor-vest-der"
         class="absolute pointer-events-none"
-        style="width: 48px; right: 0; top: 55%; transform: translateY(-50%) scaleX(-1);" />
+        style="width: 48px; right: 0; top: 55%; transform: translateY(-50%) scaleX(-1);"
+    />
 
-    <div class="max-w-sm mx-auto relative z-10 text-center" id="contenedor-vestimenta">
-
+    <div
+        class="max-w-sm mx-auto relative z-10 text-center"
+        id="contenedor-vestimenta"
+    >
         <!-- Moños flanqueando el título -->
         <div class="flex items-center justify-center gap-3 mb-2">
-            <img src="/imagenes/mono2.png" alt="" id="mono-vest-izq"
-                style="width: 48px; object-fit: contain;" />
-            <h3 class="font-crimson uppercase tracking-[0.2em] text-xl font-semibold"
-                style="color: #C9A96E;">
-                Código de<br/>Vestimenta
+            <img
+                src="/imagenes/mono2.png"
+                alt=""
+                id="mono-vest-izq"
+                style="width: 48px; object-fit: contain;"
+            />
+            <h3
+                class="font-crimson uppercase tracking-[0.2em] text-xl font-semibold"
+                style="color: #8B7355;"
+            >
+                Código de<br />Vestimenta
             </h3>
-            <img src="/imagenes/mono2.png" alt="" id="mono-vest-der"
-                style="width: 48px; object-fit: contain;" />
+            <img
+                src="/imagenes/mono2.png"
+                alt=""
+                id="mono-vest-der"
+                style="width: 48px; object-fit: contain;"
+            />
         </div>
 
         <!-- Línea decorativa -->
         <div class="flex items-center justify-center gap-3 mb-5">
-            <div style="width: 50px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
-            <div style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
-            <div style="width: 50px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
+            <div
+                style="width: 50px; height: 1px; background: linear-gradient(to right, transparent, #8B7355);"
+            >
+            </div>
+            <div
+                style="width: 5px; height: 5px; border-radius: 50%; background: #8B7355; opacity: 0.8;"
+            >
+            </div>
+            <div
+                style="width: 50px; height: 1px; background: linear-gradient(to left, transparent, #8B7355);"
+            >
+            </div>
         </div>
 
         <!-- Ícono vestido -->
         <div class="flex justify-center mb-5">
-            <img src="/iconos/vestido-de-novia.png" alt="Vestimenta"
+            <img
+                src="/iconos/vestido-de-novia.png"
+                alt="Vestimenta"
                 class="w-16 h-16 object-contain"
-                style="filter: invert(52%) sepia(37%) saturate(614%) hue-rotate(303deg) brightness(96%) contrast(95%);" />
+                style="filter: invert(52%) sepia(37%) saturate(614%) hue-rotate(303deg) brightness(96%) contrast(95%);"
+            />
         </div>
 
         <!-- Etiqueta Formal -->
-        <div class="inline-block rounded-full px-8 py-2 mb-4"
-            style="border: 2px solid #d0727d;">
-            <p class="font-crimson uppercase tracking-[0.25em] text-xl font-semibold" style="color: #d0727d;">
+        <div
+            class="inline-block rounded-full px-8 py-2 mb-4"
+            style="border: 2px solid #8B1A3D;"
+        >
+            <p
+                class="font-crimson uppercase tracking-[0.25em] text-xl font-semibold"
+                style="color: #8B1A3D;"
+            >
                 Formal
             </p>
         </div>
 
         <!-- Reservado rosado -->
         <div class="flex items-center justify-center gap-3 my-4">
-            <div style="width: 35px; height: 1px; background: linear-gradient(to right, transparent, #C9A96E);"></div>
-            <div style="width: 5px; height: 5px; border-radius: 50%; background: #C9A96E; opacity: 0.8;"></div>
-            <div style="width: 35px; height: 1px; background: linear-gradient(to left, transparent, #C9A96E);"></div>
+            <div
+                style="width: 35px; height: 1px; background: linear-gradient(to right, transparent, #8B7355);"
+            >
+            </div>
+            <div
+                style="width: 5px; height: 5px; border-radius: 50%; background: #8B7355; opacity: 0.8;"
+            >
+            </div>
+            <div
+                style="width: 35px; height: 1px; background: linear-gradient(to left, transparent, #8B7355);"
+            >
+            </div>
         </div>
 
-        <p class="font-crimson uppercase tracking-widest text-sm mb-1" style="color: #C9A96E; letter-spacing: 0.2em;">Color reservado</p>
+        <p
+            class="font-crimson uppercase tracking-widest text-sm mb-1"
+            style="color: #8B7355; letter-spacing: 0.2em;"
+        >
+            Color reservado
+        </p>
         <div class="flex items-center justify-center gap-2 mb-1">
-            <div class="w-5 h-5 rounded-full" style="background: #d0727d;"></div>
-            <p class="font-charm text-xl font-bold" style="color: #d0727d;">Rosado</p>
+            <div class="w-5 h-5 rounded-full" style="background: #8B1A3D;">
+            </div>
+            <p class="font-charm text-xl font-bold" style="color: #8B1A3D;">
+                Guindo
+            </p>
         </div>
-        <p class="font-charm text-xl" style="color: #d0727d;">para la quinceañera</p>
-
+        <p class="font-charm text-xl" style="color: #8B1A3D;">
+            para la quinceañera
+        </p>
     </div>
-
 </section>
 
 <script>
@@ -79,10 +139,10 @@
 
     const initVestimenta = () => {
         gsap.set("#contenedor-vestimenta", { opacity: 0, y: 25 });
-        gsap.set("#flor-vest-izq",  { opacity: 0, x: -25 });
-        gsap.set("#flor-vest-der",  { opacity: 0, x:  25 });
-        gsap.set("#mono-vest-izq",  { opacity: 0, x: -15 });
-        gsap.set("#mono-vest-der",  { opacity: 0, x: 15, scaleX: -1 });
+        gsap.set("#flor-vest-izq", { opacity: 0, x: -25 });
+        gsap.set("#flor-vest-der", { opacity: 0, x: 25 });
+        gsap.set("#mono-vest-izq", { opacity: 0, x: -15 });
+        gsap.set("#mono-vest-der", { opacity: 0, x: 15, scaleX: -1 });
 
         ScrollTrigger.create({
             trigger: "#contenedor-vestimenta",
@@ -90,22 +150,84 @@
 
             onEnter: () => {
                 const tl = gsap.timeline();
-                tl
-                    .to("#flor-vest-izq",        { opacity: 0.9, x: 0, duration: 1.2, ease: "power2.out" }, 0)
-                    .to("#flor-vest-der",        { opacity: 0.9, x: 0, duration: 1.2, ease: "power2.out" }, 0.1)
-                    .to("#contenedor-vestimenta", { opacity: 1, y: 0,  duration: 1.1, ease: "power2.out" }, 0.2)
-                    .to("#mono-vest-izq",         { opacity: 1, x: 0,  duration: 0.8, ease: "back.out(1.5)" }, 0.5)
-                    .to("#mono-vest-der",         { opacity: 1, x: 0, scaleX: -1, duration: 0.8, ease: "back.out(1.5)" }, 0.6);
+                tl.to(
+                    "#flor-vest-izq",
+                    { opacity: 0.9, x: 0, duration: 1.2, ease: "power2.out" },
+                    0,
+                )
+                    .to(
+                        "#flor-vest-der",
+                        {
+                            opacity: 0.9,
+                            x: 0,
+                            duration: 1.2,
+                            ease: "power2.out",
+                        },
+                        0.1,
+                    )
+                    .to(
+                        "#contenedor-vestimenta",
+                        { opacity: 1, y: 0, duration: 1.1, ease: "power2.out" },
+                        0.2,
+                    )
+                    .to(
+                        "#mono-vest-izq",
+                        {
+                            opacity: 1,
+                            x: 0,
+                            duration: 0.8,
+                            ease: "back.out(1.5)",
+                        },
+                        0.5,
+                    )
+                    .to(
+                        "#mono-vest-der",
+                        {
+                            opacity: 1,
+                            x: 0,
+                            scaleX: -1,
+                            duration: 0.8,
+                            ease: "back.out(1.5)",
+                        },
+                        0.6,
+                    );
 
-                gsap.to("#mono-vest-izq", { rotation: -7, duration: 2.5, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.2, transformOrigin: "center top" });
-                gsap.to("#mono-vest-der", { rotation: -7, scaleX: -1, duration: 2.8, repeat: -1, yoyo: true, ease: "sine.inOut", delay: 1.4, transformOrigin: "center top" });
+                gsap.to("#mono-vest-izq", {
+                    rotation: -7,
+                    duration: 2.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    delay: 1.2,
+                    transformOrigin: "center top",
+                });
+                gsap.to("#mono-vest-der", {
+                    rotation: -7,
+                    duration: 2.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "sine.inOut",
+                    delay: 1.2,
+                    transformOrigin: "center top",
+                });
             },
 
             onLeaveBack: () => {
-                gsap.killTweensOf(["#mono-vest-izq","#mono-vest-der"]);
-                gsap.to(["#contenedor-vestimenta","#flor-vest-izq","#flor-vest-der","#mono-vest-izq","#mono-vest-der"], {
-                    opacity: 0, duration: 0.4, ease: "power2.in",
-                });
+                gsap.killTweensOf(["#mono-vest-izq", "#mono-vest-der"]);
+                gsap.to(
+                    [
+                        "#contenedor-vestimenta",
+                        "#flor-vest-izq",
+                        "#flor-vest-der",
+                        "#mono-vest-izq",
+                        "#mono-vest-der",
+                    ],
+                    {
+                        opacity: 0,
+                        duration: 0.4,
+                        ease: "power2.in",
+                    },
+                );
             },
         });
     };
