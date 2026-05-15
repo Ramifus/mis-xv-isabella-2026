@@ -202,10 +202,10 @@
                 },
             });
 
-            // ── FOTOS: foto1.png ... foto9.png ──
-            const fotos = Array.from({ length: 9 }, (_, i) => ({
-                src: `/imagenes/foto${i + 1}.png`,
-                alt: `Foto ${i + 1}`,
+            // ── FOTOS: foto8 y foto9 primero, luego foto1...foto7 ──
+            const fotos = [8, 9, 1, 2, 3, 4, 5, 6, 7].map((n) => ({
+                src: `/imagenes/foto${n}.png`,
+                alt: `Foto ${n}`,
             }));
 
             const DURACION = 4500;
